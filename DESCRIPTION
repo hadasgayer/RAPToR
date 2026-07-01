@@ -22,7 +22,7 @@ Imports:
   limma,
   parallel,
   data.table,
-  pryr,
+  rlang,
   beeswarm,
   Rdpack,
   R.rsp
