@@ -33,7 +33,7 @@
 #' @importFrom parallel parApply parSapply parLapply stopCluster makeForkCluster
 #' @importFrom stats quantile dnorm
 #' @importFrom data.table frank
-#' @importFrom rlang call_match
+#' @importFrom rlang call_standardise
 #' 
 ae <- function(samp, refdata, ref.time_series = NULL,
                cor.method = "spearman", nb.cores = 2,
@@ -261,7 +261,7 @@ ae <- function(samp, refdata, ref.time_series = NULL,
                 prior = prior[1])
   }
   
-  res$call <- deparse(rlang::call_match(sys.call()))
+  res$call <- deparse(rlang::call_standardise(sys.call()))
   
   class(res) <- "ae"
   
